@@ -1,0 +1,92 @@
+#%RAML 1.0
+title: Delivery API
+
+version: 1.0.0
+
+securitySchemes:
+  AdminPass: !include security-scheme/adminPass.raml
+  userAuth: !include security-scheme/userAuth.raml
+
+/Admin:
+  description: Admin can get or update information of both delivery and customer
+  securedBy:
+    - AdminPass
+  get:
+    queryParameters:
+      AccountType:
+        required: false
+        enum:
+          - Customers
+          - Delivery Men
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/exampleAdmin.raml
+  put:
+    description: update or change recored 
+    body:
+      application/json:
+        examples:
+          Update-Record: !include examples/locations.raml
+        
+    
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              msg: record updated
+
+/Delivery_man:
+  securedBy:
+    - userAuth
+  get:
+    description: retrive assigned customer information
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/customerInfo.raml
+
+/Customer:
+  post:
+    queryParameters:
+      name:
+        required: true
+        type: string
+      address:
+        required: true
+        type: string
+      phone:
+        required: true
+        type: string
+      email:
+        required: true
+        type: string
+      password:
+        required: true
+        type: string
+
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              msg: Successfully account created!
+      400:
+        body:
+          application/json:
+            example:
+              msg: Bad Request, please complite 
+  get:
+    securedBy:
+      - userAuth
+    description: retrive assigned Delivery Man information
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/deliveryManInfo.raml
+      
+

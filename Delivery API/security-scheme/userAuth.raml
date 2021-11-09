@@ -1,0 +1,23 @@
+#%RAML 1.0 SecurityScheme
+
+type: Basic Authentication
+description: Supports basic authentication method
+displayName: Enter Username and Password
+describedBy:
+  headers:
+    Authorization:
+      description: use valid username and password
+      type: string
+  responses:
+    401:
+      body:
+        application/json:
+          example:
+            msg: enter valid username or password
+    403:
+      body:
+        application/json:
+          example:
+            msg: wrong password or username
+
+

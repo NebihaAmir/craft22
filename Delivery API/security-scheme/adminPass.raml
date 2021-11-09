@@ -1,0 +1,14 @@
+#%RAML 1.0 SecurityScheme
+type: x- token-authorization
+description: provide valid API key (token) in the request header 
+describedBy:
+  headers:
+    Authorization:
+      description: use a valid Token to acceass resource
+      type: string
+  responses:
+    401:
+      body:
+        application/json:
+          example: 
+            msg: UnAuthorized access
