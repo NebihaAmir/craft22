@@ -1,0 +1,17 @@
+{
+    "customerFname": "john",
+    "customerLName": "David",
+    "driverManID": "403AA",
+    "driverManFName": "Kaven",
+    "driverManLName": "Brook",
+    "Price": 411.0,
+    "custmerLocation": [
+                        {
+                          "address":   "Silver Spring, MD, 24013",
+                          "latitude": "-6.2608232",
+                          "longitude": "106.7884168",
+                          "need_cod": true
+                        }
+                      ] 
+
+  }

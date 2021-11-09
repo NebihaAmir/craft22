@@ -1,0 +1,136 @@
+#%RAML 1.0
+title: Delivery-API
+description: API for delivery to customer request
+protocols:  [HTTP,HTTPS]
+
+uses:
+  lib:  Library_Folder/library.raml
+
+securitySchemes:
+  Admin_Security: !include SecurityScheme/custom_securityScheme.raml
+securedBy:
+    - Admin_Security
+mediaType: 
+- application/json
+#===============================================================================
+/userAccounts:
+  is:
+    - lib.Security_And_Error_Trait
+
+  type: {lib.collection:{examplereference1: !include example/oneUserAccountExample.json,examplereference2: !include example/Create_User_Message_Example.raml}}
+
+  post:
+      
+#===============================================================================
+  /{userAccountId}:
+    is:
+      - lib.Security_And_Error_Trait
+
+    type: {lib.collection:{examplereference3: !include  example/oneUserAccountExample.json }}
+    
+    get:
+        
+#==============================================================================
+    
+  /{adminUserAccount}:
+    is:
+      - lib.Security_And_Error_Trait
+
+    type: {lib.collection:{examplereference3: !include  example/ToDisplayDataByAdminExample.json}}
+          
+    get:
+
+#==============================================================================
+/customers:
+
+  type: {lib.collection:{examplereference1: !include example/oneCustomerDataExample.json, examplereference2: !include example/Create_Customer_Message_example.raml}}
+    
+  is:
+    - lib.Security_And_Error_Trait
+  
+  post:
+#==============================================================================   
+            
+/customers/{customerId}:
+
+  type: {lib.collection:{examplereference3: !include example/oneCustomerDataExample.json, examplereference4:  !include example/oneCustomerDataExample.json}}
+    
+  is:
+    - lib.Security_And_Error_Trait
+  get:
+    
+  put:
+#==============================================================================   
+             
+/deliveryMan:
+
+  type: {lib.collection:{examplereference1: !include example/deliveryManDataExample.json,examplereference2:  !include example/Create_Customer_Message_example.raml}}
+    
+  is:
+    - lib.Security_And_Error_Trait
+  post:
+    displayName:  Register the delivery man 
+#==============================================================================            
+  
+/deliverMan/{deliveryManId}:
+
+  type: {lib.collection:{examplereference3: !include example/deliveryManDataExample.json,examplereference4: example/deliveryManDataExample.json}}
+
+    
+  is:
+    - lib.Security_And_Error_Trait
+  get:         
+  put:
+#==============================================================================
+/bookDelivery:
+  type: {lib.collection:{examplereference1: !include example/bookDeliveryDataExample.json, examplereference2: !include  example/Create_Customer_Message_example.raml }}
+    
+  is:
+    - lib.Security_And_Error_Trait
+  post:
+    
+#==============================================================================
+  /bookDeliver/{bookDeliveryId}:
+
+    type: {lib.collection:{examplereference3: !include example/bookDeliveryDataExample.json}}
+      
+    is:
+      - lib.Security_And_Error_Trait
+
+    get:
+      displayName:  "Get Booked Delivery Information"
+      queryParameters:
+        customerIdNumber:
+          required: true
+          type: string
+#==============================================================================          
+/cancelBooking:
+  /{deleteId}:
+
+    is:
+    - lib.Security_And_Error_Trait
+    type: {lib.collection:{examplereference4: !include example/bookDeliveryDataExample.json }}  
+
+    delete:
+                
+#==============================================================================
+   
+
+      
+            
+                              
+
+
+             
+
+                    
+                  
+
+                   
+ 
+
+          
+   
+
+
+

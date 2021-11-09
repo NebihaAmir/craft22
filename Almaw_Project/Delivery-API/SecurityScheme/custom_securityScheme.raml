@@ -1,0 +1,20 @@
+#%RAML 1.0 SecurityScheme
+type: x-customSecurityScheme
+description: This will makes sure that we have token in Authorization Header
+describedBy:
+  headers:
+    client_id:
+      type: string
+      minLength: 5
+      maxLength: 10
+    client_secret:
+      type: string
+      minLength: 5
+      maxLength: 10
+      
+  responses:
+    401:
+      description:  401-unauthorized access
+
+            
+
