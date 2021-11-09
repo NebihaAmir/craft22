@@ -1,0 +1,15 @@
+{
+            "deliveryManFname":  "John",
+            "deliveryManLname":  "David",
+            "deliveryManAddress":  "Silver Spring, MD, 24013",
+            "deliveryManTelephoneNumber":  "202-123-7890",
+            "deliveryManDriverID": "123W-675432",
+            "driverManLocation": [
+                                {
+                                  "address":   "Silver Spring, MD, 24013",
+                                  "latitude": "-6.2608232",
+                                  "longitude": "106.7884168",
+                                  "need_cod": true
+                                }
+                            ]
+    }

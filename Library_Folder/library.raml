@@ -1,0 +1,19 @@
+#%RAML 1.0 Library
+
+types:
+
+  DataType_UserAccount: !include ../DataType/accounts_DataType.raml
+  DataType_User_Create: !include ../DataType/create_User_DataType.raml
+  Admin_Data_Type:  !include ../DataType/admin_dataType.raml
+  Customer_Data_Type: !include ../DataType/create_Customer_DataType.raml
+  DeliverymanDataType:  !include ../DataType/deliveryManDataType.raml
+  BookDeliveryDataType: !include ../DataType/book_Delivery_dataType.raml
+
+
+traits:
+  Security_And_Error_Trait: !include  ../traits_Folder/trait.raml
+
+resourceTypes:
+  collection: !include ../resourceTypeFolder/resourceType.raml
+  
+

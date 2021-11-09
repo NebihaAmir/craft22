@@ -1,0 +1,9 @@
+ 
+  {
+            "userName": "David",
+            "emailaddress": "abc@gmail.com",
+            "telephoneNumber":  "123-432-7864",
+            "address":  "Silver Spring, MD, 24013" ,
+            "password": "good1234",
+            "dateCreated":  "2021-10-25"
+  }

@@ -1,0 +1,16 @@
+
+ {
+            "customerFname":  "John",
+            "customerLname":  "David",
+            "customerAddress":  "Silver Spring, MD, 24013",
+            "customerTelephoneNumber":  "202-123-7890",
+            "customerLocation": [
+                                {
+                                  "address":   "Silver Spring, MD, 24013",
+                                  "latitude": "-6.2608232",
+                                  "longitude": "106.7884168",
+                                  "need_cod": true
+                                }
+                              ]
+
+    }

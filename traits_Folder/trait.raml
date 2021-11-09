@@ -1,0 +1,40 @@
+#%RAML 1.0 Trait
+#headers:
+ # client_id:
+ #   type: string
+ #   minLength: 5
+ #   maxLength: 10
+ # client_secret:
+ #   type: string
+ #   minLength: 5
+ #   maxLength: 10
+
+responses:
+  400:
+    body:
+      application/json:
+        example:  !include ../example/errorExample/400.json
+  
+  401:
+    body:
+      application/json:
+        example:  !include ../example/errorExample/401.json
+  404:
+    body:
+      application/json:
+        example:  !include ../example/errorExample/404.json
+  500:
+    body:
+      application/json:
+        example:  !include ../example/errorExample/500.json
+  503:
+    body:
+      application/json:
+        example:  !include ../example/errorExample/503.json
+
+
+
+  
+  
+
+

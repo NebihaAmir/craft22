@@ -1,0 +1,49 @@
+#%RAML 1.0 ResourceType
+displayName: resource definition
+  
+post?:
+      
+  displayName: Create <<resourcePathName>> resource
+  body:
+    #type: lib.DataType_UserAccount
+    #example:  !include ../example/oneUserAccountExample.json
+    example:  <<examplereference1>>
+  responses:
+    201:
+      body:
+        type: lib.DataType_User_Create
+        #example: !include ../example/Create_User_Message_Example.raml
+        example:  <<examplereference2>>
+
+get?:
+  
+  displayName: Get <<resourcePathName>> 
+      
+  responses:
+    200:
+      body:
+        #type: lib.Admin_Data_Type[]
+        #example: !include ../example/ToDisplayDataByAdminExample.json
+        example:  <<examplereference3>>
+put?:
+  
+  displayName:  Update <<resourcePathName>>
+  responses:
+    200:
+      body:
+        application/json:
+          #example:  !include ../example/deliveryManDataExample.json
+          example:  <<examplereference4>>
+delete?:
+  
+  displayName: Delete request
+  body:
+    example:  !include ../example/bookDeliveryDataExample.json
+      
+  responses:
+    200:
+      body:
+        example:
+          {
+                message:  "Request canceled successfully"
+          }
