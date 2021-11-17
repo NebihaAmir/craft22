@@ -1,0 +1,17 @@
+#%RAML 1.0 ResourceType
+
+post:
+  description: create <<resourcePathName>> resource
+  body:
+    application/json:
+      type: <<request-post-type>>
+      example:
+          <<request-post-example>>
+  responses:
+    201:
+      body:
+        application/json:
+          type:  <<response-post-type>>
+          example:
+              <<response-post-example>>
+  is: [<<error-trait-post>>]

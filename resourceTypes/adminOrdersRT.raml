@@ -1,0 +1,7 @@
+#%RAML 1.0 ResourceType
+
+type:
+  lib.getCollection:
+    response-get-type: lib.adminOrders-dt[]
+    response-get-example: !include ../example/adminOrdersEX.raml
+    error-trait-get: lib.errorResponse

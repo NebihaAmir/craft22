@@ -1,11 +1,54 @@
 #%RAML 1.0 Library
-usage: collection of api fragment filles
-securitySchemes:
-  adminsecurity: !include security/oauthsecurityScheme.raml
-  custsecurity: !include security/basicsecurityScheme.raml
+usage:
+
 types:
-  delivdata: !include data file/deliverydataType.raml
-  customerdata: !include data file/custdataType.raml
-  adminputdata: !include data file/PutdataType.raml
+  # Get data types 
+  adminOrder-dt: !include dataTypes/adminOrderDT.raml
+  adminOrders-dt: !include dataTypes/adminOrderDT.raml
+  customer-dt: !include dataTypes/customerDT.raml
+  deliveryPerson-dt: !include dataTypes/deliveryPersonDT.raml
+
+  # Post data types 
+  bookDeliveryRequest-dt: !include dataTypes/bookDeliveryRequestDT.raml
+  bookDeliveryResponse-dt: !include dataTypes/bookDeliveryResponseDT.raml
+  customerAccountRequest-dt: !include dataTypes/customerAccountRequestDT.raml
+  customerAccountResponse-dt: !include dataTypes/customerAccountResponseDT.raml
+
+  # Delete data types 
+  cancelBookDeliveryRequest-dt: !include dataTypes/cancelBookDeliveryRequestDT.raml
+  cancelBookDeliveryResponse-dt: !include dataTypes/cancelBookDeliveryResponseDT.raml
+
+  # Error response data types
+  errorResponseDT: !include dataTypes/errorResponseDT.raml
+
 traits:
-  messageResponce: !include trait.raml
+  errorResponse: !include errorResponse.raml
+  
+securitySchemes:
+  adminSecurity: !include adminSecurityScheme.raml
+  customerSecurity: !include customerSecurityScheme.raml
+  
+resourceTypes:
+  # collection resource types
+  deleteCollection: !include resourceTypes/deleteCollection.raml
+  getCollection: !include resourceTypes/getCollection.raml
+  postCollection: !include resourceTypes/postCollection.raml
+  
+
+  # Get resource types 
+  adminOrder-rt: !include resourceTypes/adminOrderRT.raml
+  adminOrders-rt: !include resourceTypes/adminOrdersRT.raml
+  customer-rt: !include resourceTypes/customerRT.raml
+  deliveryPerson-rt: !include resourceTypes/deliveryPersonRT.raml
+
+  # Post resource types 
+  adminCreateEmployeeAccount-rt: !include resourceTypes/adminCreateEmployeeAccountRT.raml
+  bookDelivery-rt: !include resourceTypes/bookDeliveryRT.raml
+  customerAccount-rt: !include resourceTypes/customerAccountRT.raml
+
+  # Delete resource types 
+  cancelBookDelivery-rt: !include resourceTypes/cancelBookDeliveryRT.raml
+
+ 
+  
+  

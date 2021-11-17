@@ -1,0 +1,12 @@
+#%RAML 1.0 ResourceType
+
+type:
+  lib.postCollection:
+    # The below is reusing data type and example from customerAccount resource
+    request-post-type: lib.customerAccountRequest-dt
+    request-post-example: !include ../example/customerAccountRequestEX.json
+    
+    response-post-type: lib.customerAccountResponse-dt
+    response-post-example: !include ../example/customerAccountResponseEX.json
+
+    error-trait-post: lib.errorResponse

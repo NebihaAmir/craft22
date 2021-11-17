@@ -1,0 +1,17 @@
+#%RAML 1.0 SecurityScheme
+type: OAuth 2.0
+description: Delivery API support oauth 2.0 method for admin's
+describedBy:
+  headers:
+    Authorization:
+      description: Use valid token to access this API
+      type: string
+  queryParameters:
+    access_token:
+      description: send token 
+      type: string 
+  responses:
+    401:
+      description: Bad or expired
+    403:
+      description: Wrong token 

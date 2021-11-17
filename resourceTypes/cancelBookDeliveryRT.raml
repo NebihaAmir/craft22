@@ -1,0 +1,11 @@
+#%RAML 1.0 ResourceType
+
+type:
+  lib.deleteCollection:
+    request-delete-type: lib.cancelBookDeliveryRequest-dt
+    request-delete-example: !include ../example/cancelBookDeliveryRequestEX.raml
+    
+    response-delete-type: lib.cancelBookDeliveryResponse-dt
+    response-delete-example: !include ../example/cancelBookDeliveryResponseEX.raml
+
+    error-trait-post: lib.errorResponse

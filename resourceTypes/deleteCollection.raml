@@ -1,0 +1,17 @@
+#%RAML 1.0 ResourceType
+
+delete:
+  description: cancel <<resourcePathName>>
+  body:
+    application/json:
+      type: <<request-delete-type>>
+      example:
+          <<request-delete-example>>
+  responses:
+    200:
+      body:
+        application/json:
+          type:  <<response-delete-type>>
+          example:
+              <<response-delete-example>>
+  is: [<<error-trait-post>>]

@@ -1,0 +1,18 @@
+#%RAML 1.0 Extension
+extends: delivery-api-spec.raml
+uses:
+  lib: library.raml
+
+/orders:
+  type:
+    lib.adminOrders-rt
+     
+  /{orderid}:
+    type:
+      lib.adminOrder-rt
+    
+/createEmployeeAccount:
+  type:
+    lib.adminCreateEmployeeAccount-rt
+
+   

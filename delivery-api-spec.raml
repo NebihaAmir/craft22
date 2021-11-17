@@ -1,0 +1,41 @@
+#%RAML 1.0
+title: delivery-api-spec
+version: 1.0
+uses:
+  lib: library.raml
+
+/customers:
+  description: Get driver infromation assigned for the spcefic customer 
+  type:
+    lib.customer-rt:
+
+/customerAccount:
+  description: Create customer account 
+  type:
+    lib.customerAccount-rt
+      
+/bookDelivery:
+  description: Create booking delivery 
+  type:
+    lib.bookDelivery-rt
+    
+  /{delete}:
+    description: Cancel delivery service
+    type:
+        lib.cancelBookDelivery-rt
+             
+/deliveryPerson:
+  description: Get customer information for the delivery person 
+  type:
+    lib.deliveryPerson-rt
+
+     
+    
+
+    
+        
+
+
+
+
+

@@ -1,0 +1,11 @@
+#%RAML 1.0 ResourceType
+
+type:
+  lib.postCollection:
+    request-post-type: lib.bookDeliveryRequest-dt
+    request-post-example: !include ../example/bookDeliveryRequestEX.raml
+    
+    response-post-type: lib.bookDeliveryResponse-dt
+    response-post-example: !include ../example/bookDeliveryResponseEX.raml
+
+    error-trait-post: lib.errorResponse

@@ -1,0 +1,32 @@
+#%RAML 1.0 Trait
+
+usage: Standard error response structure 
+
+responses:
+  401:
+    description: 
+    body:
+      application/json:
+        type: !include dataTypes/errorResponseDT.raml
+        example:
+          {
+            message: "Unauthorized - Authentication was incorrect."
+          }
+  404:
+    body:
+      application/json:
+        type: !include dataTypes/errorResponseDT.raml
+        example:
+          {
+            "message": "resource not found."
+          }
+
+  500:
+    description: 
+    body:
+      application/json:
+        type: !include dataTypes/errorResponseDT.raml
+        example:
+          {
+            message: " Internal Server Error"
+          }
